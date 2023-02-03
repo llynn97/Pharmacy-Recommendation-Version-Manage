@@ -33,10 +33,20 @@ public class DirectionService {
 
     private final KakaoCategorySearchService kakaoCategorySearchService;
 
+    private final Base62Service base62Service;
+
+
+
+
     @Transactional
     public List<Direction> saveAll(List<Direction> directionList) {
         if (CollectionUtils.isEmpty(directionList)) return Collections.emptyList();
         return directionRepository.saveAll(directionList);
+    }
+
+    public Direction findById(String encodedId) {
+        Long decodedId = base62Service.decodeDirectionId(encodedId);
+        return directionRepository.findById(decodedId).orElse(null);
     }
 
     public List<Direction> buildDirectionList(DocumentDto documentDto) {
@@ -65,7 +75,7 @@ public class DirectionService {
 
     // 카테고리 검색 카카오 api 사용하여 검색
     public List<Direction> buildDirectionListByCategoryApi(DocumentDto inputDocumentDto) {
-        if(Objects.isNull(inputDocumentDto)) return Collections.emptyList();
+        if (Objects.isNull(inputDocumentDto)) return Collections.emptyList();
 
         return kakaoCategorySearchService
                 .requestPharmacyCategorySearch(inputDocumentDto.getLatitude(), inputDocumentDto.getLongitude(), RADIUS_KM)

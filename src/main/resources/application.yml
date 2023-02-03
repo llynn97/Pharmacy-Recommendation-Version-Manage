@@ -48,6 +48,11 @@ spring:
     hibernate:
       ddl-auto: create
 
+pharmacy:
+  recommendation:
+    base:
+      url: http://localhost:8080/dir/
+
 ---
 
 spring:
