@@ -7,6 +7,7 @@ import org.springframework.data.geo.Distance;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
+import org.springframework.web.util.UriComponentsBuilder;
 import project.pharmacy.api.dto.DocumentDto;
 import project.pharmacy.api.service.KakaoCategorySearchService;
 import project.pharmacy.direction.entity.Direction;
@@ -33,9 +34,9 @@ public class DirectionService {
 
     private final KakaoCategorySearchService kakaoCategorySearchService;
 
+    private static final String DIRECTION_BASE_URL = "https://map.kakao.com/link/map/";
+
     private final Base62Service base62Service;
-
-
 
 
     @Transactional
@@ -44,9 +45,16 @@ public class DirectionService {
         return directionRepository.saveAll(directionList);
     }
 
-    public Direction findById(String encodedId) {
+    public String findDirectionUrlById(String encodedId) {
         Long decodedId = base62Service.decodeDirectionId(encodedId);
-        return directionRepository.findById(decodedId).orElse(null);
+        Direction direction = directionRepository.findById(decodedId).orElse(null);
+
+        String params = String.join(",", direction.getTargetPharmacyName(),
+                String.valueOf(direction.getTargetLatitude()), String.valueOf(direction.getTargetLongitude()));
+
+        String result = UriComponentsBuilder.fromHttpUrl(DIRECTION_BASE_URL + params).toUriString();
+
+        return result;
     }
 
     public List<Direction> buildDirectionList(DocumentDto documentDto) {
