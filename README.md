@@ -19,24 +19,28 @@ https://catch-study.kro.kr/
 
 |<img src="https://avatars.githubusercontent.com/u/79002373?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/101779861?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/62873417?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/48711163?v=4" width="150" height="150"/>|
 |:-:|:-:|:-:|:-:|
-|FE 팀원: 조현정<br/>[@HyunJungJo98](https://github.com/HyunJungJo98)|FE 팀원: 유의진<br/>[@ejinn1](https://github.com/ejinn1)|BE 팀원: 이다은<br/>[@llynn97](https://github.com/llynn97)|BE 팀원: 김태훈<br/>[@TaeHoon0]
+|FE 팀원: 조현정<br/>[@HyunJungJo98](https://github.com/HyunJungJo98)|FE 팀원: 유의진<br/>[@ejinn1](https://github.com/ejinn1)|BE 팀원: 이다은<br/>[@llynn97](https://github.com/llynn97)|BE 팀원: 김태훈<br/>[@TaeHoon0](https://github.com/TaeHoon0)|
 
 # 🛠️ 기술 스택
 
 ## Front-End
-| Web | React, TypeScript, jotai, tailwind, stomp |
-| --- | --- |
-| CI/CD | Github Actions |
-| Cloud Service | AWS EC2, AWS S3, AWS CodeDeploy, Nginx |
-| Common | ESLint, Prettier |
-| Design | Figma |
+
+| 분류          | 기술 스택                                 |
+| ------------- | ----------------------------------------- |
+| Web           | React, TypeScript, jotai, tailwind, stomp |
+| CI/CD         | Github Actions                            |
+| Cloud Service | AWS EC2, AWS S3, AWS CodeDeploy, Nginx    |
+| Common        | ESLint, Prettier                          |
+| Design        | Figma                                     |
 
 ## Back-End
-| frameworks | Spring Boot, Spring Data JPA, Spring Security, Quartz, STOMP, OAuth 2.0 |
-| --- | --- |
-| CI / CD | Github Actions |
-| DataBase | MySQL, Redis |
-| Cloud Service | AWS EB, AWS EC2, AWS Route53, AWS RDS, AWS S3 |
+
+| 분류          | 기술 스택                                                                      |
+| ------------- | ------------------------------------------------------------------------------ |
+| frameworks    | Spring Boot, Spring Data JPA, Spring Security, Spring Quartz, STOMP, OAuth 2.0 |
+| CI / CD       | Git Actions                                                                    |
+| DataBase      | MySQL, Redis                                                                   |
+| Cloud Service | AWS EB, AWS EC2, AWS Route53, AWS RDS, AWS S3                                  |
 
 
 
